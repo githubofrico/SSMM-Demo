@@ -1,5 +1,7 @@
 package cn.edu.tju.rico.model.entity;
 
+import java.io.Serializable;
+
 import cn.edu.tju.rico.dto.UserDTO;
 
 /**        
@@ -8,8 +10,10 @@ import cn.edu.tju.rico.dto.UserDTO;
  * @author rico       
  * @created 2017年4月24日 上午9:27:16    
  */      
-public class User {
+public class User implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private int id;
 	private String uname;
 	private String passwd;

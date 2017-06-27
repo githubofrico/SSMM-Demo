@@ -31,14 +31,19 @@ public class UserQueryController {
 
 	@RequestMapping("/query")
 	public ModelAndView showUser(@RequestParam("id") int id){
+		long start = System.currentTimeMillis();
+		
 		ModelAndView mv = new ModelAndView();
-		User user = userService.getUser(id);
+		User user = (User) userService.getUser(id);
+		System.out.println(user);
 		if (user != null) {
 			mv.addObject("user", user);
 		}else{
 			mv.addObject("tip", "不存在此用户...");
 		}
 		mv.setViewName("show");   // 设定逻辑视图
+		long end = System.currentTimeMillis();
+		System.out.println("耗时 ： " + (end - start));
 		return mv;
 	}
 }
