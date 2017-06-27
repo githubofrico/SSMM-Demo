@@ -90,11 +90,17 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>4.0.4.RELEASE</version>
 		</dependency>
+		
+		<!-- Redis: Jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.8.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
-			<!-- Maven集成Tomcat插件,tomcat7和tomcat8均可以使用该插件。 需要注意的是，即使使用tomcat8， 
-			此处server标签的值也必须设置为tomcat7 -->
+			<!-- Maven集成Tomcat插件,tomcat7和tomcat8均可以使用该插件。 需要注意的是，即使使用tomcat8， 此处server标签的值也必须设置为tomcat7 -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
